@@ -32,7 +32,7 @@ const LeftSide = () => {
         }
         try {
             const response = await axios.put(
-                `http://localhost:8080/api/v1/customer/reset-password?email=${email}&oldPassword=${password}&newPassword=${confirmPassword}`
+                `https://monieflex-5960245aa82d.herokuapp.com/api/v1/customer/reset-password?email=${email}&oldPassword=${password}&newPassword=${confirmPassword}`
             );
             if (response.status === 200) {
                 toast.success("Password reset successfully");

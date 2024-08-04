@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const BASE_URL = 'http://localhost:8080/api/v1';
+const BASE_URL = 'https://monieflex-5960245aa82d.herokuapp.com/api/v1';
 const authToken = localStorage.getItem("authToken");
 
 export const apiClient = axios.create({

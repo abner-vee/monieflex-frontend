@@ -16,7 +16,7 @@ const LeftSide = () => {
         }
         try {
             const response = await axios.get(
-                `http://localhost:8080/api/v1/auth/validate-email?email=${email}`
+                `https://monieflex-5960245aa82d.herokuapp.com/api/v1/auth/validate-email?email=${email}`
             );
             if (response.status === 200) {
                 setIsValidated(true);
