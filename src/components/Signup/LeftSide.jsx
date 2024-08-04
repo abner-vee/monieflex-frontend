@@ -208,6 +208,7 @@ const LeftSide = () => {
         <div className="flex flex-col items-center justify-center mt-10">
           <button
             type="button"
+            onClick={() => navigate('/login')}
             className="hover:bg-[#CFB1FE] buttoun w-full text-[#000000] text-2xl rounded-md h-16 border-2 border-[#CFB1FE]"
           >
             I have a MonieFlex Account.

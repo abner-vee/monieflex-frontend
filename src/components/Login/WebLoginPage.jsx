@@ -4,6 +4,7 @@ import PasswordInputField from "./PasswordInputField";
 import LanguageDropdown from "./LanguageDropdown";
 import api from "../../api";
 import AbstractImage from "../../assets/Abstract3DdesignElementsArrangement.png";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const Navbar = ({ logoSrc, title }) => (
   <div className="bg-[#08284E] flex justify-between p-[15px_80px] w-full">
@@ -40,6 +41,7 @@ const InputField = ({ label, type = "text", placeholder, value, onChange }) => (
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     if (!email.includes("@")) {
@@ -57,7 +59,7 @@ const LoginForm = () => {
       localStorage.setItem("authToken", data.token); // Storing token in local storage
       toast.success("Login successful!");
       console.log("Login successful:", data);
-      window.location.href = "/dashboard";
+      navigate("/dashboard");
     } catch (error) {
       if (error.response) {
         toast.error(
