@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import api from "../../api.js";
+import api, {resendOtp} from "../../api.js";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "tailwindcss/tailwind.css";
@@ -35,7 +35,7 @@ const OtpScreen = ({ email }) => {
     setResendDisabled(true);
     setCountdown(60);
     try {
-      await api.resendOtp(email);
+      await resendOtp(email);
       toast.success("OTP resent successfully!");
     } catch (error) {
       toast.error("Failed to resend OTP.");

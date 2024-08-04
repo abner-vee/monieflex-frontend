@@ -74,6 +74,15 @@ export const verifyPin = async (pin) => {
   }
 }
 
+export const resendOtp = async (email)=>{
+  try {
+    return await apiClient.get('/auth/resend-otp?email='+email);
+  } catch (error) {
+    console.error('Activation error:', error);
+    throw error;
+  }
+}
+
 export default {
   login,
   register,

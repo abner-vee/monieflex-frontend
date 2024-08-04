@@ -57,6 +57,7 @@ const LoginForm = () => {
       localStorage.setItem("authToken", data.token); // Storing token in local storage
       toast.success("Login successful!");
       console.log("Login successful:", data);
+      window.location.href = "/dashboard";
     } catch (error) {
       if (error.response) {
         toast.error(
