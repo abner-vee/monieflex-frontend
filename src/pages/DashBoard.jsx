@@ -9,10 +9,12 @@ import TableChart from '../components/chart/TableChart';
 import { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
+import {useNavigate} from "react-router-dom";
 
 const Dashboard = () => {
   const [showText, setShowText] = useState(false);
   const [data, setData] = useState(null);
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     labels: [],
     datasets: [
@@ -137,15 +139,15 @@ const Dashboard = () => {
         <div className="w-[550px] rounded-lg py-2 px-4 bg-[#FFFFFF] shadow-md">
           <p className="text-[#A3A3A3] font-poppins tracking-[0.09rem] leading-[18px] font-semibold">Quick transactions</p>
           <div className="flex mt-5 text-center font-urbanist font-bold text-[16px] leading-[18.2px] gap-5">
-            <div className="w-[160px] h-[115px] bg-[#EBF0FF] rounded-lg flex flex-col justify-center items-center">
+            <div className="w-[160px] h-[115px] bg-[#EBF0FF] rounded-lg flex flex-col justify-center items-center cursor-pointer" onClick={()=>navigate("/transfer")}>
               <img src={dashboard1} alt="" className="mb-3" />
               <p className="text-[#0F2361]">Transfer to MonieFlex</p>
             </div>
-            <div className="w-[160px] h-[115px] bg-[#FFEBF3] rounded-lg flex flex-col justify-center items-center">
+            <div className="w-[160px] h-[115px] bg-[#FFEBF3] rounded-lg flex flex-col justify-center items-center cursor-pointer" onClick={()=>navigate("/transfer")}>
               <img src={dashboard2} alt="" className="mb-3" />
               <p className="text-[#63243D]">Transfer to other banks</p>
             </div>
-            <div className="w-[160px] h-[115px] bg-[#FFEBF3] rounded-lg flex flex-col justify-center items-center">
+            <div className="w-[160px] h-[115px] bg-[#FFEBF3] rounded-lg flex flex-col justify-center items-center cursor-pointer" onClick={()=>navigate("/purchase-airtime")}>
               <img src={dashboard3} alt="" className="mb-3" />
               <p className="text-[#63243D]">Airtime <br /> Recharge</p>
             </div>

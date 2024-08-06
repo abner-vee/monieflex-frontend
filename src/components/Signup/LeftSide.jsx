@@ -17,7 +17,7 @@ const LeftSide = () => {
   const [transactionPin, setTransactionPin] = useState("0000");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -60,15 +60,15 @@ const LeftSide = () => {
 
     try {
       const response = await api.register(userData);
-      toast.success(
-        response.responseMessage +
-          " Go to your email and follow the instructions in it."
-      );
-      // navigate('/otp');
-      window.location.href= "/otp"
+      console.log("Registered response: " +JSON.stringify(response));
+      console.log("EMAIL registered: ",email);
+      toast.success(" Go to your email and follow the instructions in it.");
+      setTimeout(()=>{
+        navigate('/otp',{
+          state: { email: email }});
+      },3000);
     } catch (error) {
       console.error("Error received: ", error);
-      toast.error("Registration failed. Please try again.");
     }
   };
 

@@ -1,7 +1,9 @@
 import axios from 'axios';
+import {toast} from "react-toastify";
 
 
 const BASE_URL = 'https://monieflex-5960245aa82d.herokuapp.com/api/v1';
+// const BASE_URL = 'http://localhost:8080/api/v1';
 const authToken = localStorage.getItem("authToken");
 
 export const apiClient = axios.create({
@@ -31,6 +33,7 @@ export const register = async (userData) => {
     return response.data;
   } catch (error) {
     console.error('Registration error:', error);
+    toast.error(error.response.data.message);
     throw error;
   }
 };

@@ -23,19 +23,19 @@ export const SideBar = () => {
   return (
     <div className="border-r border-[#DEDEDE] h-full">
       <div className="top">
-        <div className="dbd flex pt-8 px-8">
+        <div className="dbd flex pt-8 px-8 cursor-pointer" onClick={()=>navigate("/dashboard")}>
           <img src={dashboard} alt="" className="w-[30px]" />
           <p className="pl-5 font-[Urbanist] font-semibold text-base">
             Dashboard
           </p>
         </div>
-        <div className="trns flex pt-8 px-8">
+        <div className="trns flex pt-8 px-8 cursor-pointer" onClick={()=>navigate("/transfer")}>
           <img src={trans} alt="" className="w-[30px]" />
           <p className="pl-5 font-[Urbanist] font-semibold text-base">
             Transfer
           </p>
         </div>
-        <div className="vas flex pt-5 px-8">
+        <div className="vas flex pt-5 px-8 cursor-pointer" onClick={()=>navigate("/purchase-airtime")}>
           <img src={filled} alt="" className="w-[30px]" />
           <p className="pl-5 font-[Urbanist] font-semibold text-base">
             Airtime Recharge
@@ -65,11 +65,11 @@ export const SideBar = () => {
             </div>
           </div>
         )}
-        <div className="loansflex flex pt-5 px-8">
+        <div className="loansflex flex pt-5 px-8 cursor-pointer" onClick={()=>navigate("/loans")}>
           <img src={moneyBag} alt="" className="w-[30px]" />
           <p className="pl-5 font-[Urbanist] font-semibold text-base">Loans</p>
         </div>
-        <div className="crd flex pt-5 px-8">
+        <div className="crd flex pt-5 px-8 cursor-pointer" onClick={()=>navigate("/card")}>
           <img src={card} alt="" className="w-[30px]" />
           <p className="pl-5 font-[Urbanist] font-semibold text-base">Cards</p>
         </div>

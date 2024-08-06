@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import api, {resendOtp} from "../../api.js";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "tailwindcss/tailwind.css";
 
-const OtpScreen = ({ email }) => {
+const OtpScreen = ({ userEmail }) => {
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const [resendDisabled, setResendDisabled] = useState(false);
   const [countdown, setCountdown] = useState(60);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { email } = location.state || {};
+  console.log("PASSED EMAIL IS " + email);
 
   const handleChange = (element, index) => {
     if (isNaN(element.value)) return false;
