@@ -17,7 +17,7 @@ const LeftSide = () => {
   const [transactionPin, setTransactionPin] = useState("0000");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -64,7 +64,8 @@ const LeftSide = () => {
         response.responseMessage +
           " Go to your email and follow the instructions in it."
       );
-      navigate('/otp');
+      // navigate('/otp');
+      window.location.href= "/otp"
     } catch (error) {
       console.error("Error received: ", error);
       toast.error("Registration failed. Please try again.");
